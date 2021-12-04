@@ -1,3 +1,6 @@
+import os
+
+
 class Config(object):
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -12,7 +15,13 @@ class TestConfig(Config):
 
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://XXXX:XXXX@127.0.0.1:3306/victoria?charset=utf8'
+    # DATABASE = os.environ.get('DATABASE')
+    # USER = os.environ.get('USER')
+    # PASSWORD = os.environ.get('PASSWORD')
+    # HOST = os.environ.get('HOST')
+    # PORT = os.environ.get('PORT')
+    # DATABASE_NAME = os.environ.get('DATABASE_NAME')
+    SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://softpymes:softpymes@localhost:3306/softpymes_v1'
 
 
 config = {
